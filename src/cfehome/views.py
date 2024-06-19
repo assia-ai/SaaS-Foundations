@@ -17,6 +17,11 @@ def home_view(request, *args, **kwargs):
         print(request.user.first_name)
     return about_view(request, *args, **kwargs)
 
+#Projet saas view
+def projet_saas_view(request, *args, **kwargs):
+    if request.user.is_authenticated:
+        print(request.user.first_name)
+    return about_view(request, *args, **kwargs)
 
 def about_view(request, *args, **kwargs):
     qs = PageVisit.objects.all()

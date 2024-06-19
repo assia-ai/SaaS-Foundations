@@ -22,6 +22,7 @@ from landing import views as landing_views
 from subscriptions import views as subscriptions_views
 from .views import (
     home_view, 
+    projet_saas_view,
     about_view, 
     pw_protected_view,
     user_only_view,
@@ -43,6 +44,7 @@ urlpatterns = [
             name='stripe-checkout-end'
             ),
     path("pricing/", subscriptions_views.subscription_price_view, name='pricing'),
+    path("projetsaas/", projet_saas_view, name='Projet Saas'),
     path("pricing/<str:interval>/", subscriptions_views.subscription_price_view, name='pricing_interval'),
     path("about/", about_view),
     path("hello-world/", home_view),
